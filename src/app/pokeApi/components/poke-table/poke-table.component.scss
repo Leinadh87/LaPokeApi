@@ -1,0 +1,32 @@
+@import "../../../../assets/styles/colores.scss" ;
+img {
+    border: 1px solid $normal-light;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+  } 
+    
+  .fas:hover{
+      cursor: pointer;
+      color: $grass;
+      background-color: $white;      
+  }
+
+.tableFixHead          { overflow: auto; height: 700px; }
+.tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
+
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+th     { background:$gray-dark; color: $white;}
+  
+  .col-text{
+    width: 15%;
+  }
+
+  .col-img{
+    width: 15%;
+  }
+
+  .col-num{
+    width: 1%;
+  }

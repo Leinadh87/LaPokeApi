@@ -1,0 +1,77 @@
+
+
+<div class="container">
+    <div class="d-flex justify-content-between flex-row">
+        <div class="mr-auto p-2">
+            <input type="text"
+            class="form-control mb-2"
+            placeholder="Poke Search"
+            #txtSearch
+            [(ngModel)]="filterName"
+            (keyup)="onSearchPokemon( txtSearch.value )" />
+        </div>
+        <div class="div p-2">
+            <h6>{{page }} &nbsp; to &nbsp; {{page + incremento }}</h6>
+        </div>
+        <div class="p-2">
+            <button class="btn btn-primary"
+                (click)="prevPage()"
+                >
+                Previus
+            </button>
+            &nbsp;
+            
+        <!--</div>            
+        <div class="p-2">-->
+            <button class="btn btn-primary"
+                (click)="nextPage()"
+                [disabled]="(pokemones | filtro:page:search).length === 0">
+                Next
+            </button>
+        </div>
+      </div>
+<!---->
+</div>
+<div class="tableFixHead">
+
+    <table class="table  table-hover">
+        <thead>        
+            <tr>
+              <th scope="col" >#</th>
+              <th scope="col" >image</th>
+              <th scope="col" >Name</th>
+              <th scope="col" >Type</th>
+              <th scope="col" >Hability</th>
+              <th scope="col" >Detail</th>
+            </tr>          
+        </thead>          
+        <tbody>
+            <tr *ngFor="let pokemon of pokemones | filtro:page:search"    (click)="getPokemon(pokemon)"> <!--class=" color-{{this.pokeService.getPrincipalType(pokemon.types)}}" -->
+                <td >
+                    <h6>{{pokemon.id}}</h6>
+                </td>
+                <td class=" col-img">
+                    <img class="small-img"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"
+                        
+                        alt="{{pokemon.name}}"><!--onerror="this.classList.add('icon', 'fa_user');"-->
+
+                </td>
+                <td >
+                    <h6>{{pokemon.name}}</h6>
+                </td>
+                <td >
+                    <h6>{{this.pokeService.getPrincipalType(pokemon.types)}}</h6>
+                </td>
+                <td >
+                    <h6>{{this.pokeService.getAbilities(pokemon)}}</h6>
+                </td>
+                <td >
+                    <i (click)="getPokemon(pokemon)" class="fas fa-eye fa-3x color-{{this.pokeService.getPrincipalType(pokemon.types)}}"></i>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

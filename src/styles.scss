@@ -1,1 +1,17 @@
+
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 95%; }
+body{
+background: #2980B9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-size: medium;
+//text-transform: uppercase;
+//font-family: 'Prompt', sans-serif;
+//font-family: 'Orbitron', sans-serif;
+//font-family: 'Poiret One', cursive;
+//font-family: 'Merienda', cursive;
+//font-family: 'Lemonada', cursive;
+font-family: 'Syncopate', sans-serif;
+//font-family: 'Gruppo', cursive;
+}

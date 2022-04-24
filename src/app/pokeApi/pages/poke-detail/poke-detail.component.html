@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="card mb-3" style="max-width: 940px;">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"
+                        class="img-fluid " style="width: 350px; height: 350px;" [alt]="pokemon.name">
+                    <div class="d-grid gap-2" *ngIf="divIsVisible">
+                        <button (click)="capturar()" class="btn btn-outline-dark option-button" type="button">capturar</button>
+                    </div>
+                </div>
+                <div class="col-md-7 p-2">
+                    
+                    <div class="card-body">
+                        <h3 class="card-title text-center">{{ pokemon.name}}</h3>
+                        <p class="card-text"> {{this.pokeService.getPrincipalType(pokemon.types)}}</p>
+                        <p class="card-text"><small
+                                class="text-muted">{{this.pokeService.getAbilities(pokemon)}}</small></p>
+                    </div>
+                    <div class="d-grid gap-2 ">
+                        
+                        <div class="sheet__item w-100">
+                            <!-- <p class="text-center">Stats</p> -->
+
+                            <div class="sheet__progress w-100">
+                                <div class="w-20 color-gray sheet__item_label">HP:</div>
+                                <div class="w-80">
+                                    <app-progress-bar [color]="this.pokeService.getPrincipalType(pokemon.types)" [value]="pokemon.stats[5].base_stat"></app-progress-bar>
+                                </div>
+                            </div>
+            
+                            <div class="sheet__progress w-100">
+                                <div class="w-20 color-gray sheet__item_label">Attack: </div>
+                                <div class="w-80">
+                                    <app-progress-bar [color]="this.pokeService.getPrincipalType(pokemon.types)" [value]="pokemon.stats[4].base_stat"></app-progress-bar>
+                                </div>
+                            </div>
+            
+                            <div class="sheet__progress w-100">
+                                <div class="w-20 color-gray sheet__item_label">Defense:</div>
+                                <div class="w-80">
+                                    <app-progress-bar [color]="this.pokeService.getPrincipalType(pokemon.types)" [value]="pokemon.stats[3].base_stat"></app-progress-bar>
+                                </div>
+                            </div>
+            
+                            <div class="sheet__progress w-100">
+                                <div class="w-20 color-gray sheet__item_label">Sp. Attack:</div>
+                                <div class="w-80">
+                                    <app-progress-bar [color]="this.pokeService.getPrincipalType(pokemon.types)" [value]="pokemon.stats[2].base_stat"></app-progress-bar>
+                                </div>
+                            </div>
+            
+                            <div class="sheet__progress w-100">
+                                <div class="w-20 color-gray sheet__item_label">Sp. Defense:</div>
+                                <div class="w-80">
+                                    <app-progress-bar [color]="this.pokeService.getPrincipalType(pokemon.types)" [value]="pokemon.stats[1].base_stat"></app-progress-bar>
+                                </div>
+                            </div>
+            
+                            <div class="sheet__progress w-100">
+                                <div class="w-20 color-gray sheet__item_label">Speed:</div>
+                                <div class="w-80">
+                                    <app-progress-bar [color]="this.pokeService.getPrincipalType(pokemon.types)" [value]="pokemon.stats[0].base_stat"></app-progress-bar>
+                                </div>
+                            </div>
+            
+                        </div>
+                        
+                    </div>   
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
